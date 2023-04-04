@@ -14,3 +14,34 @@
   -webkit-text-size-adjust: 100%;
 }
 
+.sidebar{
+  border-right: 1px solid #fff;
+  width: max-content;
+  padding-right: 10px;
+}
+.item{
+  display: flex;
+  flex-direction: column;
+}
+.folder{
+  padding: 2px 0;
+  margin: 2px;
+  border: 1px solid #fff;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.button{
+  margin: 2px;
+}
+
+.file{
+  width: max-content;
+  margin-left: 5px;
+}
+
+.buttons{
+  margin-left: 20px
+}

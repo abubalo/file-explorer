@@ -12,19 +12,25 @@ const Folder: FC<{ data: Data }> = ({ data }) => {
 
   if (data.isFolder) {
     return (
-      <div>
-        <>
-          <span style={{ color: "#fff" }}>📁 {data.name}</span>
-          <button type="button">file</button>
-          <button type="button">folder</button>
+      <div className="item">
+        <div className="folder">
+          <span className="name">📁 {data.name}</span>
+          <div className="buttons">
+            <button type="button" className="button">
+              🗃️
+            </button>
+            <button type="button" className="button">
+              📄
+            </button>
+          </div>
+        </div>
 
-          {data.items &&
-            data.items.map((item) => <Folder key={item.id} data={item} />)}
-        </>
+        {data.items &&
+          data.items.map((item) => <Folder key={item.id} data={item} />)}
       </div>
     );
   } else {
-    return <span className="">📄 {data.name}</span>;
+    return <span className="file">📄 {data.name}</span>;
   }
 };
 
