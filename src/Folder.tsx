@@ -10,22 +10,27 @@ export type Data = {
 const Folder: FC<{ data: Data }> = ({ data }) => {
   const [expand, setExpand] = useState(false);
 
+  function handleFileCreation(e : React.MouseEvent<HTMLDivElement> ){
+    e.stopPropagation();
+    
+  }
+
   if (data.isFolder) {
     return (
       <div className="item">
-        <div className="folder">
+        <div className="folder" onClick={()=> setExpand(!expand)}>
           <span className="name">📁 {data.name}</span>
           <div className="buttons">
             <button type="button" className="button">
-              🗃️
+            🗀
             </button>
             <button type="button" className="button">
-              📄
+            🗋
             </button>
           </div>
         </div>
 
-        {data.items &&
+        {data.items && expand &&
           data.items.map((item) => <Folder key={item.id} data={item} />)}
       </div>
     );
